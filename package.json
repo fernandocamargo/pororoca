@@ -1,0 +1,32 @@
+{
+  "name": "pororoca",
+  "version": "1.0.0",
+  "description": "A command line tool for creating pororocas™",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "pororoca": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandocamargo/pororoca.git"
+  },
+  "author": "Fernando Camargo <talk-to-me@fernandocamargo.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fernandocamargo/pororoca/issues"
+  },
+  "homepage": "https://github.com/fernandocamargo/pororoca#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "mustache": "^2.2.1",
+    "progress": "^1.1.8",
+    "promptly": "^2.0.0",
+    "q": "^1.4.1",
+    "request": "^2.72.0",
+    "twitter-text": "^1.13.4"
+  }
+}

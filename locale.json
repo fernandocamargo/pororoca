@@ -1,0 +1,21 @@
+{
+  "inputs": {
+    "username": "Twitter's username: ",
+    "password": "Twitter's password: ",
+    "resource": "Tweet body text: ",
+    "publish": "Publish the ${package.name} (a valid Twitter account is required)? ",
+    "prefix": "",
+    "suffix": ""
+  },
+  "options": {
+    "username": "Twitter's user",
+    "password": "Twitter's password",
+    "resource": "Tweet",
+    "publish": "Publish into Twitter",
+    "prefix": "",
+    "suffix": ""
+  },
+  "commands": {
+    "create": "Create a new tweet storm"
+  }
+}
