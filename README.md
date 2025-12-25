@@ -142,6 +142,14 @@ pororoca/
 └── docker-compose.yml # Docker Compose configuration
 ```
 
+**Key Files:**
+- [`index.js`](https://github.com/fernandocamargo/pororoca/blob/master/index.js) - Main CLI application (212 lines)
+- [`locale.json`](https://github.com/fernandocamargo/pororoca/blob/master/locale.json) - Internationalization strings
+- [`package.json`](https://github.com/fernandocamargo/pororoca/blob/master/package.json) - Project dependencies and metadata
+- [`Dockerfile`](https://github.com/fernandocamargo/pororoca/blob/master/Dockerfile) - Docker configuration
+- [`docker-compose.yml`](https://github.com/fernandocamargo/pororoca/blob/master/docker-compose.yml) - Docker Compose setup
+- [`CODE_ANALYSIS.md`](https://github.com/fernandocamargo/pororoca/blob/master/CODE_ANALYSIS.md) - Technical analysis document
+
 ## Dependencies
 
 - [`commander`](https://github.com/tj/commander.js) - CLI framework

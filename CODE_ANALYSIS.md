@@ -2,7 +2,16 @@
 
 **Author:** Fernando Camargo
 **Project:** Twitter Thread Storm CLI Tool
+**Repository:** [github.com/fernandocamargo/pororoca](https://github.com/fernandocamargo/pororoca)
 **Analysis Date:** December 2025
+
+---
+
+## Files Analyzed
+
+- [`index.js`](https://github.com/fernandocamargo/pororoca/blob/master/index.js) (212 lines) - Main application logic
+- [`package.json`](https://github.com/fernandocamargo/pororoca/blob/master/package.json) - Dependencies and metadata
+- [`locale.json`](https://github.com/fernandocamargo/pororoca/blob/master/locale.json) - Internationalization strings
 
 ---
 
@@ -24,7 +33,7 @@ The codebase is predominantly **functional**, avoiding classes, mutations, and i
 - Immutable data transformations using `map`, `filter`, `reduce`
 - Promise chains for async composition instead of callbacks
 
-**Example** (index.js:172-197):
+**Example** ([`index.js:172-197`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L172-L197)):
 ```javascript
 return flatten()
   .then(separate.breaks)
@@ -43,7 +52,7 @@ return flatten()
 
 The code focuses on **what** to compute rather than **how** to compute it.
 
-**Example** (index.js:165-170):
+**Example** ([`index.js:165-170`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L165-L170)):
 ```javascript
 const promises = Object.keys(defaults.origins).map(get.origin).map(execute)
 return Q.allSettled(promises)
@@ -63,7 +72,7 @@ Instead of imperative loops, the code declares transformations as data flows.
 
 **Implementation:** The entire application is wrapped as a CommonJS module with explicit exports.
 
-**Location:** index.js:201-211
+**Location:** [`index.js:201-211`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L201-L211)
 
 **Pattern Description:**
 - Encapsulates private state (`core`, `methods`, `defaults`, `helpers`)
@@ -76,7 +85,7 @@ Instead of imperative loops, the code declares transformations as data flows.
 
 ### 2.2 Strategy Pattern
 
-**Implementation:** The `defaults.origins` object (index.js:78-82) implements different strategies for resource loading.
+**Implementation:** The `defaults.origins` object ([`index.js:78-82`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L78-L82)) implements different strategies for resource loading.
 
 ```javascript
 origins: {
@@ -94,7 +103,7 @@ origins: {
 
 ### 2.3 Factory Pattern (Utility Factories)
 
-**Implementation:** The `helpers` object (index.js:12-45) acts as a factory for utility functions.
+**Implementation:** The `helpers` object ([`index.js:12-45`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L12-L45)) acts as a factory for utility functions.
 
 **Characteristics:**
 - Provides reusable, composable utilities
@@ -115,7 +124,7 @@ get: function (property) {
 
 **Implementation:** Extensive use of promise chains to create data transformation pipelines.
 
-**Example** (index.js:189-196):
+**Example** ([`index.js:189-196`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L189-L196)):
 ```javascript
 return flatten()
   .then(separate.breaks)
@@ -156,6 +165,8 @@ map: function (collection) {
 }
 ```
 
+**See:** [`index.js:14`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L14), [`index.js:29-34`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L29-L34)
+
 **Characteristics:**
 - Extensive use of `.bind()` for partial application
 - Function composition through binding contexts
@@ -169,11 +180,11 @@ map: function (collection) {
 
 **Features Used:**
 - `const`/`let` instead of `var`
-- Arrow functions `=>` (index.js:15, 17, 18, etc.)
-- Template literals (index.js:37, 63, 118)
-- Destructuring (index.js:117, 136)
-- Rest/Spread operators (index.js:39, 99, 172)
-- `Object.assign()` (index.js:199)
+- Arrow functions `=>` ([`index.js:15-18`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L15-L18), etc.)
+- Template literals ([`index.js:37`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L37), [`63`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L63), [`118`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L118))
+- Destructuring ([`index.js:117`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L117), [`136`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L136))
+- Rest/Spread operators ([`index.js:39`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L39), [`99`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L99), [`172`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L172))
+- `Object.assign()` ([`index.js:199`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L199))
 
 **Shebang Flag:**
 ```javascript
@@ -188,7 +199,7 @@ The `--harmony` flag indicates this code was written during Node.js's ES6 transi
 
 ### 3.3 Configuration-Driven Design
 
-**Implementation:** The `defaults` object (index.js:47-83) centralizes all configuration.
+**Implementation:** The `defaults` object ([`index.js:47-83`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L47-L83)) centralizes all configuration.
 
 **Benefits:**
 - Single source of truth
@@ -219,7 +230,7 @@ const defaults = {
 
 **Unique Approach:** The code uses `.bind()` not just for partial application, but for **dependency injection** and **late binding**.
 
-**Example** (index.js:162-163):
+**Example** ([`index.js:162-163`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L162-L163)):
 ```javascript
 const get = {
   origin: helpers.get.bind(defaults.origins)
@@ -243,14 +254,14 @@ Here, `helpers.get` is bound to `defaults.origins`, so when called, `this` refer
 
 **Examples:**
 
-**Helpers as HOFs** (index.js:26-28):
+**Helpers as HOFs** ([`index.js:26-28`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L26-L28)):
 ```javascript
 split: function (object) {
   return object.toString().trim().split(this)
 }
 ```
 
-**Reducer with Custom Logic** (index.js:35-38):
+**Reducer with Custom Logic** ([`index.js:35-38`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L35-L38)):
 ```javascript
 enumerate: function (item, index, collection) {
   const prefix = this.apply(this, Array.from(arguments))
@@ -274,7 +285,7 @@ enumerate: function (item, index, collection) {
 - `.spread()` - Spread array results to arguments
 - `.done()` - Terminal promise operation
 
-**Example** (index.js:167-170):
+**Example** ([`index.js:167-170`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L167-L170)):
 ```javascript
 return Q.allSettled(promises)
   .spread(transform)
@@ -290,7 +301,7 @@ return Q.allSettled(promises)
 
 ### 4.4 Functional Composition Patterns
 
-**Reducer-Based Composition** (index.js:103-129):
+**Reducer-Based Composition** ([`index.js:103-129`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L103-L129)):
 ```javascript
 get: {
   lines: function (stack, line, index, lines) {
@@ -317,7 +328,7 @@ get: {
 
 ### 5.1 Internationalization (i18n)
 
-**Implementation:** Externalized all user-facing strings to `locale.json`.
+**Implementation:** Externalized all user-facing strings to [`locale.json`](https://github.com/fernandocamargo/pororoca/blob/master/locale.json).
 
 **Benefits:**
 - Easy to translate
@@ -331,11 +342,11 @@ get: {
 ### 5.2 Separation of Concerns
 
 **Structure:**
-- **Helpers** (index.js:12-45): Utility functions
-- **Defaults** (index.js:47-83): Configuration
-- **Methods** (index.js:86-198): Business logic
-- **API** (index.js:199): Public interface
-- **CLI Setup** (index.js:201-211): Commander configuration
+- **Helpers** ([`index.js:12-45`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L12-L45)): Utility functions
+- **Defaults** ([`index.js:47-83`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L47-L83)): Configuration
+- **Methods** ([`index.js:86-198`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L86-L198)): Business logic
+- **API** ([`index.js:199`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L199)): Public interface
+- **CLI Setup** ([`index.js:201-211`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L201-L211)): Commander configuration
 
 **Literature:**
 - [Separation of Concerns](https://en.wikipedia.org/wiki/Separation_of_concerns) - Wikipedia
@@ -359,6 +370,8 @@ const sizes = Object.keys(spaces).map(helpers.get.bind(spaces))
 // index.js:162
 const get = { origin: helpers.get.bind(defaults.origins) }
 ```
+
+**See:** [`index.js:123`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L123), [`index.js:140`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L140), [`index.js:162`](https://github.com/fernandocamargo/pororoca/blob/master/index.js#L162)
 
 **Literature:**
 - [The Pragmatic Programmer](https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/) - Hunt & Thomas
