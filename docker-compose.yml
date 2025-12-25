@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  pororoca:
+    build: .
+    image: pororoca:latest
+    container_name: pororoca
+    volumes:
+      # Mount current directory to access local files
+      - ./:/data
+    working_dir: /data
+    # Override the default command to keep container running
+    # Users can exec into it or override with docker-compose run
+    stdin_open: true
+    tty: true
