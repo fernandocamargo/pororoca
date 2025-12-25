@@ -1,6 +1,6 @@
 # pororoca
 
-A Node.js CLI tool for creating and publishing Twitter thread storms. Pororoca automatically splits long text into tweet-sized chunks, formats them with numbering, and can optionally publish them to Twitter.
+A [Node.js](https://nodejs.org/) CLI tool for creating and publishing Twitter thread storms. Pororoca automatically splits long text into tweet-sized chunks, formats them with numbering, and can optionally publish them to Twitter.
 
 ## What is Pororoca?
 
@@ -17,12 +17,12 @@ A Node.js CLI tool for creating and publishing Twitter thread storms. Pororoca a
 
 ## Quick Start with Docker (Recommended)
 
-The easiest way to run this project is using Docker, which handles all dependencies automatically.
+The easiest way to run this project is using [Docker](https://www.docker.com/), which handles all dependencies automatically.
 
 ### Prerequisites
 
-- Docker installed on your system
-- Docker Compose (optional, but recommended)
+- [Docker](https://www.docker.com/) installed on your system
+- [Docker Compose](https://docs.docker.com/compose/) (optional, but recommended)
 
 ### Using Docker Compose
 
@@ -103,8 +103,8 @@ If you prefer to run without Docker:
 
 ### Prerequisites
 
-- Node.js (v14 or higher recommended)
-- Yarn package manager
+- [Node.js](https://nodejs.org/) (v14 or higher recommended)
+- [Yarn](https://yarnpkg.com/) package manager
 
 ### Installation
 
@@ -144,14 +144,14 @@ pororoca/
 
 ## Dependencies
 
-- `commander` - CLI framework
-- `twitter-text` - Twitter text utilities
-- `chalk` - Terminal styling
-- `mustache` - Template rendering
-- `promptly` - Interactive prompts
-- `request` - HTTP client
-- `progress` - Progress bars
-- `q` - Promise library
+- [`commander`](https://github.com/tj/commander.js) - CLI framework
+- [`twitter-text`](https://github.com/twitter/twitter-text) - Twitter text utilities
+- [`chalk`](https://github.com/chalk/chalk) - Terminal styling
+- [`mustache`](https://github.com/janl/mustache.js) - Template rendering
+- [`promptly`](https://github.com/moxystudio/node-promptly) - Interactive prompts
+- [`request`](https://github.com/request/request) - HTTP client (deprecated)
+- [`progress`](https://github.com/visionmedia/node-progress) - Progress bars
+- [`q`](https://github.com/kriskowal/q) - Promise library
 
 ## Note
 
@@ -159,4 +159,4 @@ This is a legacy project showcasing Node.js CLI development patterns. The Twitte
 
 ## License
 
-Apache License 2.0 - See [LICENSE](LICENSE) file for details
+[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) - See [LICENSE](LICENSE) file for details
