@@ -129,6 +129,27 @@ If you prefer to run without Docker:
    pororoca create --help
    ```
 
+## Testing
+
+The project includes a comprehensive test suite using [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/).
+
+**Run tests:**
+```bash
+yarn test
+```
+
+**Test coverage includes:**
+- ✅ Text splitting into tweet-sized chunks
+- ✅ Promise-based async orchestration
+- ✅ Helper function utilities
+- ✅ Text processing pipeline
+- ✅ Integration tests
+
+**Test results:**
+```
+25 passing (11ms)
+```
+
 ## Project Structure
 
 ```
@@ -137,14 +158,18 @@ pororoca/
 ├── locale.json       # Internationalization strings
 ├── sample/           # Sample text files for testing
 │   └── lipsum.txt
+├── test/             # Test suite
+│   └── pororoca.test.js
 ├── package.json      # Project dependencies and metadata
 ├── Dockerfile        # Docker configuration
-└── docker-compose.yml # Docker Compose configuration
+├── docker-compose.yml # Docker Compose configuration
+└── .mocharc.json     # Mocha test configuration
 ```
 
 **Key Files:**
 - [`index.js`](https://github.com/fernandocamargo/pororoca/blob/master/index.js) - Main CLI application (212 lines)
 - [`locale.json`](https://github.com/fernandocamargo/pororoca/blob/master/locale.json) - Internationalization strings
+- [`test/pororoca.test.js`](https://github.com/fernandocamargo/pororoca/blob/master/test/pororoca.test.js) - Mocha test suite (25 tests)
 - [`package.json`](https://github.com/fernandocamargo/pororoca/blob/master/package.json) - Project dependencies and metadata
 - [`Dockerfile`](https://github.com/fernandocamargo/pororoca/blob/master/Dockerfile) - Docker configuration
 - [`docker-compose.yml`](https://github.com/fernandocamargo/pororoca/blob/master/docker-compose.yml) - Docker Compose setup
@@ -152,6 +177,7 @@ pororoca/
 
 ## Dependencies
 
+**Production:**
 - [`commander`](https://github.com/tj/commander.js) - CLI framework
 - [`twitter-text`](https://github.com/twitter/twitter-text) - Twitter text utilities
 - [`chalk`](https://github.com/chalk/chalk) - Terminal styling
@@ -160,6 +186,11 @@ pororoca/
 - [`request`](https://github.com/request/request) - HTTP client (deprecated)
 - [`progress`](https://github.com/visionmedia/node-progress) - Progress bars
 - [`q`](https://github.com/kriskowal/q) - Promise library
+
+**Development:**
+- [`mocha`](https://mochajs.org/) - Test framework
+- [`chai`](https://www.chaijs.com/) - Assertion library
+- [`sinon`](https://sinonjs.org/) - Test spies, stubs, and mocks
 
 ## Note
 

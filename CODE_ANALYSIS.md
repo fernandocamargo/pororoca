@@ -390,11 +390,17 @@ const get = { origin: helpers.get.bind(defaults.origins) }
 6. **Configurable**: Centralized defaults
 7. **Modern (for 2016)**: Embraced ES6 early
 
-### 6.2 Potential Improvements
+### 6.2 Improvements Made
+
+1. ✅ **Testing**: Comprehensive test suite added with [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/)
+   - 25 passing tests covering text splitting, async orchestration, and integration
+   - See [`test/pororoca.test.js`](https://github.com/fernandocamargo/pororoca/blob/master/test/pororoca.test.js)
+
+### 6.3 Potential Future Improvements
 
 1. **Readability**: Point-free style can be cryptic for newcomers
 2. **Type Safety**: No TypeScript or Flow annotations
-3. **Testing**: No test suite present
+3. **Test Coverage**: Could add more edge case testing and code coverage metrics
 4. **Documentation**: Functions lack JSDoc comments
 5. **Error Handling**: Generic `.catch(helpers.log)` could be more specific
 6. **Complexity**: Deep binding/context manipulation requires careful mental model
