@@ -157,6 +157,33 @@ pororoca/
 
 This is a legacy project showcasing Node.js CLI development patterns. The Twitter API integration is not fully implemented in this version.
 
+## Code Quality & Architecture
+
+This project demonstrates advanced [functional programming](https://en.wikipedia.org/wiki/Functional_programming) principles in JavaScript, featuring:
+
+- **[Point-free (tacit) programming](https://en.wikipedia.org/wiki/Tacit_programming)** - Extensive use of `.bind()` for partial application and composition
+- **[Higher-order functions](https://eloquentjavascript.net/05_higher_order.html)** - Functions as first-class citizens with sophisticated composition patterns
+- **[Promise pipelines](https://javascript.info/promise-chaining)** - Declarative async flow using [Q promises](https://github.com/kriskowal/q)
+- **[Design patterns](https://www.patterns.dev/posts/classic-design-patterns/)** - Module, Strategy, Factory, and Pipeline patterns
+- **Configuration-driven design** - Centralized defaults and externalized i18n strings
+- **ES6+ features** - Early adoption of modern JavaScript (arrow functions, const/let, template literals, destructuring)
+
+### Technical Highlights
+
+- **Paradigm:** Functional programming with declarative data transformations
+- **Style:** Point-free composition and immutable data flows
+- **Async:** Promise-based control flow (pre-async/await era)
+- **Architecture:** Separation of concerns with utility factories and configuration objects
+
+**📊 For a comprehensive analysis of coding style, design patterns, and software development practices, see [CODE_ANALYSIS.md](CODE_ANALYSIS.md)**
+
+The analysis document includes:
+- Detailed design pattern breakdowns
+- Functional programming techniques with examples
+- Historical context (circa 2016)
+- 40+ references to books, articles, and documentation
+- Comparison with modern FP libraries (Ramda, Lodash/FP)
+
 ## License
 
 [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0) - See [LICENSE](LICENSE) file for details
